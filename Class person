@@ -1,0 +1,96 @@
+public class person
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+
+        public person(string name, string email)
+        {
+            Name = name;
+            Email = email;
+            Console.WriteLine("[constructor]person Executed");
+
+        }
+
+        public void DisplayBasicInof()
+        {
+            Console.WriteLine($"Name:{Name} , Email:{Email}");
+        }
+
+        public class Student : person
+        {
+            public int StudentId { get; set; }
+            public double GPA { get; set; }
+
+            public Student(string name, string emial, int studentId, double gpa) : base(name, emial)
+            {
+                StudentId = studentId;
+                GPA = gpa;
+                Console.WriteLine("constructor]student Executed");
+            }
+
+            public void DisplayStudentInof()
+            {
+                Console.WriteLine($"StudentId:{StudentId} , GPA:{GPA}");
+            }
+        }
+        public class Employee : person
+        {
+            public int EmployeeId { get; set; }
+            public double Salary { get; set; }
+
+            public Employee(string name, string email, int emploteeId, double salary) : base(name, email)
+            {
+                EmployeeId = emploteeId;
+                Salary = salary;
+                Console.WriteLine("[constructor]Employee coreated.");
+            }
+
+            public void DisplayEmployeeInof()
+            {
+                DisplayBasicInof();
+                Console.WriteLine($"Employee ID: {EmployeeId},Salary:{Salary:C}");
+            }
+
+        }
+
+        public class Teacher : Employee
+        {
+            public String CourseName { get; set; }
+            public Teacher(string name, string email, int employeeId, double salary, string courseName) : base(name, email, employeeId, salary)
+            {
+                CourseName = courseName;
+                Console.WriteLine("[Constructor]Teacher coreated.");
+            }
+        }
+
+        class program
+        {
+            static void Main(string[] args)
+
+            {
+                Console.WriteLine("---Creating Student Object ---");
+                Student student = new Student("Aqqel Mohamed", "AQEEL@ALNAHDI.com", 3005, 5.5);
+
+                Console.WriteLine("\n---Calling Student Mohamed ----");
+
+                student.DisplayBasicInof();
+                student.DisplayStudentInof();
+
+                Console.WriteLine("\n-----------------------\n");
+
+                Console.WriteLine("----Creating Teacher Opbject ----");
+
+                Teacher teacher = new Teacher("Dr. Ahmed", "ahmed@example.com", 6001, 9500.00, "Compputerv Science");
+
+                Console.WriteLine("\n--- Calling Teacher Mathods ----");
+
+                teacher.DisplayBasicInof();
+                teacher.DisplayEmployeeInof();
+            }
+        }
+
+        
+            
+
+
+    }
