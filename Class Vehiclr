@@ -1,0 +1,59 @@
+/* public  class Vehiclr
+      {
+          public string Brand { get; set; }
+          public int year { get; set; }
+
+          public Vehiclr(string brand , int year)
+          {
+              Brand = brand;
+              year = year;
+          }
+
+          public virtual void Start()
+          {
+              Console.WriteLine($"The {year }{Brand}is starting");
+          }
+
+          public class Car : Vehiclr
+          {
+              public int NumberOfDoors { get; set; }
+
+              public Car (string brand, int year,int NumberOfDoors) : base(brand, year)
+              {
+                  NumberOfDoors = NumberOfDoors;
+              }
+              public class Bus : Vehiclr
+              {
+                  public int Capacity { get; set; }
+
+                  public Bus(string brand, int year, int capacity) : base(brand,year)
+                  {
+                      Capacity = capacity;
+                  }
+              }
+                  public class Motorcycle : Vehiclr
+              {
+                  public bool HasSidecar { get; set; }
+                  public Motorcycle (string brand, int year, bool hasSidecar): base(brand, year)
+                  {
+                      HasSidecar = hasSidecar;
+                  }
+              }
+             class program
+              {
+                  static void Main(string[] args)
+                  {
+                      Car mycar = new Car("TOYOTA", 2026,8);
+                      Bus myBus = new Bus("Hays", 2022 , 4);
+                      Motorcycle myMotorcycle = new Motorcycle("SWEDY", 2014, true) ;
+
+                      Console.WriteLine("---Testing Start Method---");
+                      mycar.Start();
+                      myBus.Start();
+                      myMotorcycle.Start();
+                  }
+
+              }
+
+          }
+      }*/
