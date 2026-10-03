@@ -1,0 +1,101 @@
+namespace UniversityMembers
+    {
+        
+        public class Person
+        {
+            public string Name { get; set; }
+
+            public Person(string name)
+            {
+                Name = name;
+            }
+
+           
+            public virtual void DisplayInfo()
+            {
+                Console.WriteLine($"Name: {Name}");
+            }
+        }
+
+        
+        public class Student : Person
+        {
+            public int StudentId { get; set; }
+
+            public Student(string name, int studentId) : base(name)
+            {
+                StudentId = studentId;
+            }
+
+            public override void DisplayInfo()
+            {
+                Console.WriteLine($"Student Name: {Name}, ID: {StudentId}");
+            }
+        }
+
+      
+        public class Employee : Person
+        {
+            public double Salary { get; set; }
+
+            public Employee(string name, double salary) : base(name)
+            {
+                Salary = salary;
+            }
+
+            public override void DisplayInfo()
+            {
+                Console.WriteLine($"Employee Name: {Name}, Salary: {Salary:C}");
+            }
+        }
+
+       
+        public class Teacher : Person
+        {
+            public string CourseName { get; set; }
+
+            public Teacher(string name, string courseName) : base(name)
+            {
+                CourseName = courseName;
+            }
+
+            public override void DisplayInfo()
+            {
+                Console.WriteLine($"Teacher Name: {Name}, Course: {CourseName}");
+            }
+        }
+
+        class Program
+        {
+           
+            public static void PrintPersonDetails(Person person)
+            {
+                person.DisplayInfo();
+            }
+
+            static void Main(string[] args)
+            {
+               
+                List<Person> universityMembers = new List<Person>
+            {
+                new Person("AQEEL"),
+                new Student("Ali", 7845),
+                new Employee("Salha", 4500),
+                new Teacher("D.Ahmed", "C# Programming")
+            };
+
+                Console.WriteLine("---  foreach Loop resultu ---");
+                
+                foreach (Person member in universityMembers)
+                {
+                    Console.WriteLine($"Runtime Type: {member.GetType().Name}");
+                    member.DisplayInfo();
+                    Console.WriteLine("-----------------------------------");
+                }
+
+                Console.WriteLine("\n--- Calling the general function the Person ---");
+               
+                PrintPersonDetails(universityMembers[1]);
+            }
+        }
+    }*/
